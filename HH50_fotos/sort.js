@@ -18,7 +18,8 @@ items.sort(function(a, b){
  		
     jaarB = getJaar(b.getAttribute('src'));
     jaarA = getJaar(a.getAttribute('src'));
-      return jaarA - jaarB;
+
+    return jaarA - jaarB;
 });
 
 // reatach the sorted elements
@@ -31,6 +32,23 @@ for(var i = 0, len = items.length; i < len; i++) {
     // over the items in the same order as they were re-
     // turned from being sorted.
     parent.appendChild(detatchedItem);
+}
+
+// insert headers
+var jaren = [];
+for ( var i =0; i <items.length; i++ ) {
+     
+     var jaar = getJaar(items[i].getAttribute('src'));
+
+     if ( jaren.includes(jaar) ) continue;
+
+     jaren.push(jaar);
+
+     var header = document.createElement("H1");
+     var headerText = document.createTextNode("Jaar "+jaar);
+
+     header.appendChild(headerText);
+     items[i].parentNode.insertBefore(header, items[i]);
 }
 
 }
