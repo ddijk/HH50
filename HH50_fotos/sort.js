@@ -56,14 +56,10 @@ for ( var i =0; i <items.length; i++ ) {
 function getJaar(filename) {
    
         var lastComponent = filename.split('/').pop();
-     
+
         var regex = /^(\d{4})_.*/;
       
         var result =  lastComponent.match(regex).pop();
        
         return parseInt(result);
-}
-
-function go2() {
-   console.log('here we go');
 }

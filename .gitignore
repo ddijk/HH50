@@ -1,4 +1,5 @@
-*.jpg
+**/*.jpg
+*.jpeg
 *.JPG
 *.m4v
 *.4mv
